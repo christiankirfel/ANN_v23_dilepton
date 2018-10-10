@@ -1,0 +1,10 @@
+cd log/log
+rm *
+cd ..
+cd err
+rm *
+cd ..
+cd out
+rm *
+cd ..
+cd ..

@@ -1,0 +1,40 @@
+#################################################################################################
+#                            HTCondor Job Submission File Example
+# See http://research.cs.wisc.edu/htcondor/manual/current/condor_submit.html for further commands
+#################################################################################################
+
+# Path to executable
+Executable              = job-wtloop-wrapper-script.sh
+# Job process number is given as argument to executable
+Arguments               = "$(FILE)"
+# Use HTCondor's vanilla universe (see http://research.cs.wisc.edu/htcondor/manual/current/2_4Running_Job.html)
+Universe                = vanilla
+
+# Specify files to be transferred (please note that files on CephFS should _NOT_ be transferred!!!)
+# Should executable be transferred from the submit node to the job working directory on the worker node?
+Transfer_executable     = True
+# List of input files to be transferred from the submit node to the job working directory on the worker node
+Transfer_input_files    = 
+# List of output files to be transferred from the job working directory on the worker node to the submit node
+Transfer_output_files   = 
+
+# Specify job input and output
+Error                   = log/err/$(FILE).err 
+Input                   =                                                
+Output                  = log/out/$(FILE).out                                              
+Log                     = log/log/log.WtLoop
+
+# Request resources to the best of your knowledge
+# (check log file after job completion to compare requested and used resources)
+# Memory in MiB, if no unit is specified!
+Request_memory          = 4 GB
+Request_cpus            = 1
+# Disk space in kiB, if no unit is specified!
+Request_disk            = 50 GB
+
+# Additional job requirements (note the plus signs)
+# Choose OS (options: "SL6", "CentOS7", "Ubuntu1604")
++ContainerOS            = "SL6"
+
+
+Queue FILE from v23_rules.txt
