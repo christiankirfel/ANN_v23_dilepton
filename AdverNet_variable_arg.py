@@ -1,13 +1,3 @@
-#Adding arguments for the queue 
-# coding: utf-8
-
-# # 1. Set up environment
-
-# ## 1.1 Select Theano as backend for Keras
-# Tensorflow also works with ATLBONNTW-81
-
-# In[5]:
-
 import sys
 
 import matplotlib
@@ -31,7 +21,6 @@ import os
 environ['KERAS_BACKEND'] = 'theano'
 #environ['KERAS_BACKEND'] = 'tensorflow'
 
-# Set architecture of system (AVX instruction set is not supported on SWAN)
 environ['THEANO_FLAGS'] = 'gcc.cxxflags=-march=corei7'
 
 #Create the output file
@@ -40,9 +29,7 @@ if not os.path.exists(output_path):
     os.makedirs(output_path)
 
 
-# ## 1.2 Read variables and options
 
-# In[6]:
 
 
 # # Process command line arguments
@@ -424,12 +411,12 @@ from keras.optimizers import SGD
 layercount = 0
 
 simple_inputs = Input(shape=(train_event_transfered.shape[1],), name='Net_input')
-simple_Dx = Dense(32, activation="relu", name='Net_layer1')(simple_inputs)
-for layercount in(0, int(sys.argv[2])-1):
+simple_Dx = Dense(int(sys.argv[3]), activation="relu", name='Net_layer1')(simple_inputs)
+for layercount in range(int(sys.argv[2])):
 	simple_Dx = Dense(int(sys.argv[3]), activation="relu", name='Net_layer_%d' % int(layercount))(simple_Dx)
 simple_Dx = Dense(1, activation="sigmoid", name='Net_output')(simple_Dx)
 simple_D = Model(inputs=[simple_inputs], outputs=[simple_Dx], name='Net_model')
-simple_D.compile(loss="binary_crossentropy", optimizer="adam")
+simple_D.compile(loss="binary_crossentropy", optimizer=SGD())
 simple_D.summary()
 
 
@@ -454,7 +441,6 @@ predicttrain__simple_D = simple_D.predict(train_event_transfered)
 
 # ## 3.4 Calculate and plot ROC
 
-# In[ ]:
 
 
 from sklearn.metrics import roc_curve, auc
@@ -463,7 +449,6 @@ print('Traing ROC: ', roc_auc_score(train_target, predicttrain__simple_D))
 print('Test ROC:   ', roc_auc_score(test_target, predicttest__simple_D))
 
 
-# In[ ]:
 
 
 ''' Plot ROC '''
@@ -488,12 +473,10 @@ plt.xlabel('False Positive Rate')
 plt.gcf().savefig(output_path + 'simple_ROC_' + file_extension + '.png')
 plt.gcf().clear()
 
-#print "First plot I found"
 
 
 # ## 3.5 Plot traing and test distributions
 
-# In[ ]:
 
 
 ''' Plot NN output '''
@@ -521,7 +504,6 @@ plt.xlabel('Simple_D response', horizontalalignment='left', fontsize='large')
 plt.title('Normalised')
 plt.gcf().savefig(output_path + 'simple_NN_' + file_extension + '.png')
 plt.gcf().clear()
-#plt.show()
 plt.gcf().clear()
 
 
@@ -581,7 +563,7 @@ layercount = 0
 
 ANN_inputs = Input(shape=(train_event_transfered.shape[1],), name='Net_f_input')
 ANN_Dx = Dense(int(sys.argv[5]), activation="relu", name='Net_f_layer_start')(ANN_inputs)
-for layercount in(0, int(sys.argv[4])-1):
+for layercount in range(int(sys.argv[4])):
 	ANN_Dx = Dense(int(sys.argv[5]), activation="relu", name='Net_f_layer_%d' % int(layercount))(ANN_Dx)
 ANN_Dx = Dense(1, activation="sigmoid", name='Net_f_output')(ANN_Dx)
 ANN_D = Model(inputs=[ANN_inputs], outputs=[ANN_Dx], name='Net_f_model')
@@ -590,7 +572,7 @@ layercount = 0
 
 # ANN_Rx = ANN_Dx
 ANN_Rx = ANN_D(ANN_inputs)
-for layercount in(0, int(sys.argv[6])):
+for layercount in range(int(sys.argv[6])):
 	ANN_Rx = Dense(int(sys.argv[7]), activation="relu", name='Net_r_layer_%d' % int(layercount))(ANN_Rx)
 ANN_Rx = Dense(1, activation="sigmoid", name='Net_r_output')(ANN_Rx)
 ANN_R = Model(inputs=[ANN_inputs], outputs=[ANN_Rx], name='Net_r_model')
@@ -617,7 +599,8 @@ def make_trainable(network, flag):
 
 opt_ANN_D = SGD()
 ANN_D.compile(loss=[make_loss_ANN_D(c=1.0)], optimizer=opt_ANN_D)
-# ANN_D.summary()
+ANN_D.summary()
+ANN_R.summary()
 #plot_model(ANN_D, to_file='png/ANN_D.png')
 #plot_model(ANN_R, to_file='png/ANN_R.png')
 
@@ -627,6 +610,7 @@ make_trainable(ANN_R, False)
 make_trainable(ANN_D, True)
 ANN_DRf.compile(loss=[make_loss_ANN_D(c=1.0), make_loss_ANN_R(c=lam)], optimizer=opt_ANN_DRf)
 #plot_model(ANN_DRf, to_file='png/ANN_DRf.png')
+ANN_DRf.summary()
 
 opt_ANN_DfR = SGD(momentum=0.2)
 ANN_DfR = Model(inputs=[ANN_inputs], outputs=[ANN_R(ANN_inputs)])
@@ -634,11 +618,10 @@ make_trainable(ANN_R, True)
 make_trainable(ANN_D, False)
 ANN_DfR.compile(loss=[make_loss_ANN_R(c=1.0)], optimizer=opt_ANN_DfR)
 #plot_model(ANN_DfR, to_file='png/ANN_DfR.png')
-
+ANN_DfR.summary()
 
 # ## 4.2 Pretrain ANN_D
 
-# In[ ]:
 
 
 ''' Pretraining of ANN_D on train_event_transfered with target train_target, using train_weight as EventWeight '''
@@ -648,7 +631,6 @@ make_trainable(ANN_D, True)
 # ANN_D.fit(train_event_transfered, train_target, sample_weight=train_weight, epochs=int(Options['PreTrainEpochs']))
 
 
-# In[ ]:
 
 
 # loss = {"L_D": []}
@@ -664,7 +646,6 @@ make_trainable(ANN_D, True)
 
 # ### 4.3.1 ANN_D only ROC
 
-# In[ ]:
 
 
 from IPython import display
@@ -675,7 +656,6 @@ predicttrain__ANN_D = ANN_D.predict(train_event_transfered)
 predicttest__ANN_D = ANN_D.predict(test_event_transfered)
 
 ''' Plot ROC and NN outpout '''
-#taken from Rui
 
 
 def plot_D_losses(losses1, losses2, losses3, losses4):
@@ -745,7 +725,6 @@ plt.gcf().clear()
 
 # ### 4.3.2 ANN_D only overtaining
 
-# In[ ]:
 
 
 xlo, xhi, bins = float(Options['xlo']), float(Options['xhi']), int(Options['bins'])
@@ -782,7 +761,6 @@ print ('Test sample wt_DR_nominal: ', len(predicttest__ANN_D[test_target == 1]),
 
 # ### 4.3.3 ANN_D only syst deviations
 
-# In[ ]:
 
 
 xlo, xhi, bins = float(Options['xlo']), float(Options['xhi']), int(Options['bins'])
@@ -822,19 +800,51 @@ print ('Test sample wt_DR_nominal: ', len(predicttest__ANN_D[logical_and(test_ta
 
 # ## 4.4 Pretrain ANN_R
 
-# In[ ]:
 
 
 ''' Pretraining of ANN_R on train_event_transfered with target train_systematics, using train_weight as EventWeight '''
 make_trainable(ANN_R, True)
 make_trainable(ANN_D, False)
 # ANN_DfR.compile(loss=ANN_DfR.loss, optimizer=ANN_DfR.optimizer)
-ANN_DfR.fit(train_event_transfered, train_systematics, sample_weight=train_weight, epochs=int(Options['PreTrainEpochs']))
+#ANN_DfR.fit(train_event_transfered, train_systematics, sample_weight=train_weight, epochs=int(Options['PreTrainEpochs']))
 
 
+def plot_R_losses(losses1, losses2, losses3, losses4):
+    display.clear_output(wait=True)
+#     display.display(plt.gcf())
+
+    ax1 = plt.subplot(311)
+    values1 = np.array(losses1)
+    plt.plot(range(len(values1)), values1, label=r"$loss$ D test", color="blue", linestyle='dashed')
+    values2 = np.array(losses2)
+    plt.plot(range(len(values2)), values2, label=r"$loss$ D train", color="blue")
+    plt.legend(loc="upper right")
+    plt.grid()
+    
+    ax2 = plt.subplot(312, sharex=ax1)
+    values3 = np.array(losses3)
+    plt.plot(range(len(values3)), values3, label=r"$loss$ R test", color="green", linestyle='dashed')
+    values4 = np.array(losses4)
+    plt.plot(range(len(values4)), values4, label=r"$loss$ R train", color="green")
+    plt.legend(loc="upper right")
+    plt.grid()
+    plt.gcf().savefig(output_path + 'ANN_R_Pretrain_ROC_' + file_extension + '.png')
+    #plt.show()
+
+
+for i in range(int(Options['PreTrainEpochs'])):
+    ANN_DfR.fit(train_event_transfered, train_systematics, sample_weight=train_weight, epochs=1)
+    
+    
+    lossesDtest.append(ANN_D.evaluate(test_event_transfered, test_target, sample_weight=test_weight, verbose=0))
+    lossesDtrain.append(ANN_D.evaluate(train_event_transfered, train_target, sample_weight=train_weight, verbose=0))
+    
+    lossesRtest.append(ANN_DfR.evaluate(test_event_transfered, test_systematics, sample_weight=test_weight, verbose=0))
+    lossesRtrain.append(ANN_DfR.evaluate(train_event_transfered, train_systematics, sample_weight=train_weight, verbose=0))
+    
+    plot_R_losses(lossesDtest, lossesDtrain, lossesRtest, lossesRtrain)
 # ## 4.5 Train adversarial networks
 
-# In[ ]:
 
 
 ''' Define a function to plot losses '''
@@ -872,7 +882,6 @@ def plot_losses(i, losses):
 
 # ### 4.5.1 Adversarial networks losses
 
-# In[ ]:
 
 
 # ReadFiles()
@@ -935,15 +944,11 @@ for i in range(int(Options['Iterations'])):
 # - load the content
 #       tfidf = pickle.load(open("x_result.pkl", "rb" ) )
 
-# In[ ]:
 
 print "Are we still going?"
 
 import os
 outfolder = 'results/' + Options['Output'] + '/'
-#This comes too late ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#os.mkdir(outfolder)
-#Need to give strings as options
 # serialize model to JSON
 model_json = ANN_D.to_json()
 with open(outfolder + Options['Adresult'] + ".json", "w") as json_file:
@@ -955,7 +960,6 @@ print("Saved "+ outfolder + Options['Adresult'] + " to disk")
 
 # ### 4.5.3 Adversarial networks ROC
 
-# In[ ]:
 
 
 predicttest__ANN = ANN_D.predict(test_event_transfered)
@@ -987,7 +991,6 @@ plt.gcf().savefig(output_path + 'ANN_ROC_' + file_extension + '.png')
 
 # ### 4.5.4 Adversarial networks overtraining
 
-# In[ ]:
 
 
 xlo, xhi, bins = float(Options['xlo']), float(Options['xhi']), int(Options['bins'])
@@ -1013,7 +1016,6 @@ plt.legend()
 plt.xlabel('ANN response', horizontalalignment='left', fontsize='large')
 plt.title('Normalised')
 plt.gcf().savefig(output_path + 'ANN_NN_' + file_extension + '.png')
-#plt.show()
 
 plt.gcf().clear()
 
@@ -1024,7 +1026,6 @@ print ('Test sample wt_nominal: ', len(predicttest__ANN[test_target == 1]), '\n'
 
 # ### 4.5.5 Adversarial networks syst deviations
 
-# In[ ]:
 
 
 xlo, xhi, bins = float(Options['xlo']), float(Options['xhi']), int(Options['bins'])
@@ -1050,7 +1051,6 @@ plt.legend()
 plt.xlabel('ANN response', horizontalalignment='left', fontsize='large')
 plt.title('Normalised')
 plt.gcf().savefig(output_path + 'ANN_syst_dev_' + file_extension + '.png')
-#plt.show()
 plt.gcf().clear()
 
 print ('Test sample wt_DR_nominal: ', len(predicttest__ANN[logical_and(test_target == 1, test_systematics == 0)]), '\n',

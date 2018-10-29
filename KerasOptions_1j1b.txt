@@ -9,11 +9,11 @@ BackgroundTree tt_nominal
 #tt_radHi
 #added nominal for testing
 SimpleTrainEpochs 10
-PreTrainEpochs 20
+PreTrainEpochs 10
 #PreTrainEpochs 2
 AdTrainEpochs 10
 #AdTrainEpochs 2
-Iterations 200
+Iterations 100
 #Iterations 20
 Adresult ANN_D
 Pkl train_events

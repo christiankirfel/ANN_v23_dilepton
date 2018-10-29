@@ -28,7 +28,7 @@ Log                     = log/log/log.$(ClusterId).$(Process).$(Layers).$(Nodes)
 # Request resources to the best of your knowledge
 # (check log file after job completion to compare requested and used resources)
 # Memory in MiB, if no unit is specified!
-Request_memory          = 4 GB
+Request_memory          = 6 GB
 Request_cpus            = 1
 # Disk space in kiB, if no unit is specified!
 Request_disk            = 5 GB
@@ -37,9 +37,8 @@ Request_disk            = 5 GB
 # Choose OS (options: "SL6", "CentOS7", "Ubuntu1604")
 +ContainerOS            = "SL6"
 
+# simple_layers simple_nodes D_layers D_nodes R_layers R_nodes
 
 queue Layers_simple,Nodes_simple,Layers_D,Nodes_D,Layers_R,Nodes_R from (
-    6 180 6 180 1 100
-    6 180 6 180 1 32
-    8 100 8 100 3 16
+    6 180 6 40 1 100
 )
