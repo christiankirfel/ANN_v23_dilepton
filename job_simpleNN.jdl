@@ -1,0 +1,46 @@
+#################################################################################################
+#                            HTCondor Job Submission File Example
+# See http://research.cs.wisc.edu/htcondor/manual/current/condor_submit.html for further commands
+#################################################################################################
+
+# Path to executable
+Executable              = job-wrapper-script.sh
+# Job process number is given as argument to executable
+Arguments               = "$(Layers_simple) $(Nodes_simple)"
+#$(Process) $(Variable) 
+# Use HTCondor's vanilla universe (see http://research.cs.wisc.edu/htcondor/manual/current/2_4Running_Job.html)
+Universe                = vanilla
+
+# Specify files to be transferred (please note that files on CephFS should _NOT_ be transferred!!!)
+# Should executable be transferred from the submit node to the job working directory on the worker node?
+Transfer_executable     = True
+# List of input files to be transferred from the submit node to the job working directory on the worker node
+Transfer_input_files    = 
+# List of output files to be transferred from the job working directory on the worker node to the submit node
+Transfer_output_files   = 
+
+# Specify job input and output
+Error                   = log_simpleNN/err/err.$(ClusterId).$(Process).$(Layers_simple).$(Nodes_simple) 
+Input                   =                                                
+Output                  = log_simpleNN/out/out.$(ClusterId).$(Process).$(Layers_simple).$(Nodes_simple)                                                
+Log                     = log_simpleNN/log/log.$(ClusterId).$(Process).$(Layers_simple).$(Nodes_simple)
+
+# Request resources to the best of your knowledge
+# (check log file after job completion to compare requested and used resources)
+# Memory in MiB, if no unit is specified!
+Request_memory          = 6 GB
+Request_cpus            = 1
+# Disk space in kiB, if no unit is specified!
+Request_disk            = 5 GB
+
+# Additional job requirements (note the plus signs)
+# Choose OS (options: "SL6", "CentOS7", "Ubuntu1604")
++ContainerOS            = "SL6"
+
+# simple_layers simple_nodes D_layers D_nodes R_layers R_nodes
+
+queue Layers_simple,Nodes_simple from (
+    3 40
+    3 64
+    3 64
+)
