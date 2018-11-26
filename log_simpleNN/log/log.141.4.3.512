@@ -1,0 +1,25 @@
+000 (141.004.000) 11/15 14:56:55 Job submitted from host: <131.220.160.179:9618?addrs=131.220.160.179-9618+[--1]-9618&noUDP&sock=1913_fe62_3>
+...
+001 (141.004.000) 11/15 14:56:59 Job executing on host: <10.160.8.23:9618?CCBID=131.220.166.39:9618%3faddrs%3d131.220.166.39-9618+[--1]-9618%26noUDP%26sock%3dcollector#504%20131.220.166.40:9618%3faddrs%3d131.220.166.40-9618+[--1]-9618%26noUDP%26sock%3dcollector#603&addrs=10.160.8.23-9618+[--1]-9618&noUDP&sock=12864_3666_3>
+...
+013 (141.004.000) 11/19 10:16:02 Job was released.
+	The system macro SYSTEM_PERIODIC_RELEASE expression '( ( time() - EnteredCurrentStatus ) > 10 * 60 ) && ( JobStatus == 5 )' evaluated to TRUE
+...
+001 (141.004.000) 11/19 10:16:05 Job executing on host: <10.160.8.1:9618?CCBID=131.220.166.39:9618%3faddrs%3d131.220.166.39-9618+[--1]-9618%26noUDP%26sock%3dcollector#507%20131.220.166.40:9618%3faddrs%3d131.220.166.40-9618+[--1]-9618%26noUDP%26sock%3dcollector#606&addrs=10.160.8.1-9618+[--1]-9618&noUDP&sock=12909_1429_3>
+...
+013 (141.004.000) 11/20 10:33:12 Job was released.
+	The system macro SYSTEM_PERIODIC_RELEASE expression '( ( time() - EnteredCurrentStatus ) > 10 * 60 ) && ( JobStatus == 5 )' evaluated to TRUE
+...
+001 (141.004.000) 11/20 10:33:20 Job executing on host: <10.160.8.23:9618?CCBID=131.220.166.39:9618%3faddrs%3d131.220.166.39-9618+[--1]-9618%26noUDP%26sock%3dcollector#504%20131.220.166.40:9618%3faddrs%3d131.220.166.40-9618+[--1]-9618%26noUDP%26sock%3dcollector#603&addrs=10.160.8.23-9618+[--1]-9618&noUDP&sock=12864_3666_3>
+...
+005 (141.004.000) 11/20 10:37:59 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:12, Sys 0 00:00:30  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:12, Sys 0 00:00:30  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	2955  -  Run Bytes Sent By Job
+	18981  -  Run Bytes Received By Job
+	2955  -  Total Bytes Sent By Job
+	18981  -  Total Bytes Received By Job
+...

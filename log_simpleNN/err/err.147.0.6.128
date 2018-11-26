@@ -1,0 +1,4 @@
+  File "simple_NN.py", line 409
+    plt.gcf().savefig(output_path + 'simple_NN_losses' + file_extension + '_' + str(counter)'.png')
+                                                                                                 ^
+SyntaxError: invalid syntax

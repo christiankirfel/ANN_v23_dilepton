@@ -1,0 +1,17 @@
+/cvmfs/sft.cern.ch/lcg/releases/LCG_93/scikitlearn/0.18.1/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+Using Theano backend.
+WARNING (theano.gof.cmodule): WARNING: your Theano flags `gcc.cxxflags` specify an `-march=X` flags.
+         It is better to let Theano/g++ find it automatically, but we don't do it now
+Traceback (most recent call last):
+  File "simple_NN.py", line 419, in <module>
+    plot_simple_losses(lossessimpletest, lossessimpletrain)
+  File "simple_NN.py", line 407, in plot_simple_losses
+    plt.gcf().savefig(output_path + 'simple_NN_losses' + file_extension + '.png')
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/matplotlib/2.1.0/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/matplotlib/figure.py", line 1814, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/matplotlib/2.1.0/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/matplotlib/backend_bases.py", line 2259, in print_figure
+    **kwargs)
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/matplotlib/2.1.0/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/matplotlib/backends/backend_agg.py", line 512, in print_png
+    filename_or_obj = open(filename_or_obj, 'wb')
+IOError: [Errno 2] No such file or directory: './figures_2j2b_4_256/simple_NN_losses2j2b_4_256.png'

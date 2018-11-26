@@ -1,0 +1,313 @@
+Welcome inside the SL6 container.
+[7mlsetup              [0m lsetup <tool1> [ <tool2> ...] (see lsetup -h):
+[7m lsetup agis        [0m  ATLAS Grid Information System
+[7m lsetup asetup      [0m  (or asetup) to setup an Athena release
+[7m lsetup atlantis    [0m  Atlantis: event display
+[7m lsetup eiclient    [0m  Event Index 
+[7m lsetup emi         [0m  EMI: grid middleware user interface 
+[7m lsetup ganga       [0m  Ganga: job definition and management client
+[7m lsetup lcgenv      [0m  lcgenv: setup tools from cvmfs SFT repository
+[7m lsetup panda       [0m  Panda: Production ANd Distributed Analysis
+[7m lsetup pod         [0m  Proof-on-Demand (obsolete)
+[7m lsetup pyami       [0m  pyAMI: ATLAS Metadata Interface python client
+[7m lsetup root        [0m  ROOT data processing framework
+[7m lsetup rucio       [0m  distributed data management system client
+[7m lsetup sft         [0m  setup tools from SFT repo (use lcgenv instead)
+[7m lsetup xcache      [0m  XRootD local proxy cache
+[7m lsetup xrootd      [0m  XRootD data access
+[7madvancedTools       [0m advanced tools menu
+[7mdiagnostics         [0m diagnostic tools menu
+[7mhelpMe              [0m more help
+[7mprintMenu           [0m show this menu
+[7mshowVersions        [0m show versions of installed software
+Error: You need to specify a root version.  The current recommendation is
+         lsetup "root 6.14.04-x86_64-slc6-gcc62-opt" 
+		  or 
+         export ALRB_rootVersion=6.14.04-x86_64-slc6-gcc62-opt
+         lsetup root
+       Please consult your analysis group if you need a specific version for
+       your work.  To see what versions are available, type
+         showVersions root
+************************************************************************
+Requested:  lcgenv ... 
+ Setting up [4mlcgenv HEAD[0m ... 
+  lcgenv -p LCG_93 x86_64-slc6-gcc62-opt matplotlib ...
+# Using gcc with newer binutils
+# Using globaly provided gcc from /cvmfs/sft.cern.ch/lcg/contrib
+# found package nose-e5642
+# found package Python-b163d
+# found package sqlite-9c81e
+# found package mock-f04fd
+# found package pbr-e6169
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package setuptools-49883
+# found package funcsigs-cb942
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package certifi-1f900
+# found package setuptools-49883
+# found package Python-b163d
+# found package tornado-417ec
+# found package backports-f3e79
+# found package setuptools-49883
+# found package certifi-1f900
+# found package Python-b163d
+# found package pytz-951d5
+# found package Python-b163d
+# found package numpy-a5ce1
+# found package setuptools-49883
+# found package Python-b163d
+# found package setuptools-49883
+# found package python_dateutil-43468
+# found package setuptools-49883
+# found package six-87990
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package pyparsing-70a87
+# found package setuptools-49883
+# found package Python-b163d
+# found package six-87990
+# found package messaging-d409c
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package cycler-164cc
+# found package setuptools-49883
+# found package six-87990
+# found package Python-b163d
+# found package backports-b4f9c
+# found package pip-e2f3e
+# found package setuptools-49883
+# found package wheel-59918
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package xz-eb849
+# found package setuptools-49883
+# found package Python-b163d
+>>>>>>>>>>>>>>>>>>>>>>>>> Information for user <<<<<<<<<<<<<<<<<<<<<<<<<
+************************************************************************
+************************************************************************
+Requested:  lcgenv ... 
+ Setting up [4mlcgenv HEAD[0m ... 
+  lcgenv -p LCG_93 x86_64-slc6-gcc62-opt root_numpy ...
+# Using gcc with newer binutils
+# Using globaly provided gcc from /cvmfs/sft.cern.ch/lcg/contrib
+# found package ROOT-0f687
+# found package srm_ifce-be254
+# found package Davix-00a5f
+# found package Boost-87cb4
+# found package Python-b163d
+# found package sqlite-9c81e
+# found package R-40ee1
+# found package zeromq-b4186
+# found package numpy-a5ce1
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package CASTOR-7749c
+# found package fftw-a8420
+# found package tbb-d3621
+# found package Python-b163d
+# found package mysql-d1585
+# found package gfal-6fc75
+# found package graphviz-3aa9e
+# found package expat-fe6d4
+# found package libtool-9ad34
+# found package pango-a1e65
+# found package fontconfig-cfe58
+# found package glib-21533
+# found package pcre-9b589
+# found package libffi-26487
+# found package cairo-5f16e
+# found package png-1a97c
+# found package freetype-4f115
+# found package zlib-da225
+# found package pixman-bdd51
+# found package pkg_config-59220
+# found package fontconfig-cfe58
+# found package freetype-4f115
+# found package harfbuzz-c2d58
+# found package cairo-5f16e
+# found package freetype-4f115
+# found package glib-21533
+# found package GSL-36ee5
+# found package xrootd-f5f6a
+# found package Python-b163d
+# found package zlib-da225
+# found package Vc-df9bb
+# found package oracle-e33b7
+# found package dcap-cdd28
+# found package blas-e1974
+# found package numpy-a5ce1
+# found package Python-b163d
+>>>>>>>>>>>>>>>>>>>>>>>>> Information for user <<<<<<<<<<<<<<<<<<<<<<<<<
+************************************************************************
+************************************************************************
+Requested:  lcgenv ... 
+ Setting up [4mlcgenv HEAD[0m ... 
+  lcgenv -p LCG_93 x86_64-slc6-gcc62-opt scikitlearn ...
+# Using gcc with newer binutils
+# Using globaly provided gcc from /cvmfs/sft.cern.ch/lcg/contrib
+# found package numpy-a5ce1
+# found package setuptools-49883
+# found package Python-b163d
+# found package sqlite-9c81e
+# found package Python-b163d
+# found package scipy-d12d9
+# found package numpy-a5ce1
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+>>>>>>>>>>>>>>>>>>>>>>>>> Information for user <<<<<<<<<<<<<<<<<<<<<<<<<
+************************************************************************
+************************************************************************
+Requested:  lcgenv ... 
+ Setting up [4mlcgenv HEAD[0m ... 
+  lcgenv -p LCG_93 x86_64-slc6-gcc62-opt keras ...
+# Using gcc with newer binutils
+# Using globaly provided gcc from /cvmfs/sft.cern.ch/lcg/contrib
+# found package PyYAML-4b352
+# found package setuptools-49883
+# found package Python-b163d
+# found package sqlite-9c81e
+# found package Python-b163d
+# found package theano-d8c17
+# found package pygments-ea549
+# found package setuptools-49883
+# found package Python-b163d
+# found package nose-e5642
+# found package Python-b163d
+# found package numpy-a5ce1
+# found package setuptools-49883
+# found package Python-b163d
+# found package pydot-9f69c
+# found package pyparsing-70a87
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package scipy-d12d9
+# found package numpy-a5ce1
+# found package setuptools-49883
+# found package Python-b163d
+# found package graphviz-3aa9e
+# found package expat-fe6d4
+# found package libtool-9ad34
+# found package pango-a1e65
+# found package fontconfig-cfe58
+# found package glib-21533
+# found package pcre-9b589
+# found package libffi-26487
+# found package cairo-5f16e
+# found package png-1a97c
+# found package freetype-4f115
+# found package zlib-da225
+# found package pixman-bdd51
+# found package pkg_config-59220
+# found package fontconfig-cfe58
+# found package freetype-4f115
+# found package harfbuzz-c2d58
+# found package cairo-5f16e
+# found package freetype-4f115
+# found package glib-21533
+# found package pydot_ng-2b499
+# found package pyparsing-70a87
+# found package Python-b163d
+# found package six-87990
+# found package setuptools-49883
+# found package Python-b163d
+>>>>>>>>>>>>>>>>>>>>>>>>> Information for user <<<<<<<<<<<<<<<<<<<<<<<<<
+************************************************************************
+************************************************************************
+Requested:  lcgenv ... 
+ Setting up [4mlcgenv HEAD[0m ... 
+  lcgenv -p LCG_93 x86_64-slc6-gcc62-opt ipython ...
+# Using gcc with newer binutils
+# Using globaly provided gcc from /cvmfs/sft.cern.ch/lcg/contrib
+# found package pygments-ea549
+# found package setuptools-49883
+# found package Python-b163d
+# found package sqlite-9c81e
+# found package Python-b163d
+# found package backports-f3e79
+# found package pexpect-29c22
+# found package setuptools-49883
+# found package Python-b163d
+# found package ptyprocess-1cc45
+# found package setuptools-49883
+# found package Python-b163d
+# found package prompt_toolkit-2a4f0
+# found package setuptools-49883
+# found package wcwidth-cd5f4
+# found package setuptools-49883
+# found package Python-b163d
+# found package six-87990
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package simplegeneric-4cd94
+# found package setuptools-49883
+# found package Python-b163d
+# found package setuptools-49883
+# found package traitlets-8c9da
+# found package decorator-7ee00
+# found package setuptools-49883
+# found package Python-b163d
+# found package six-87990
+# found package setuptools-49883
+# found package ipython_genutils-1999c
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package six-87990
+# found package pickleshare-651b5
+# found package setuptools-49883
+# found package pathlib2-d60a6
+# found package setuptools-49883
+# found package six-87990
+# found package Python-b163d
+# found package Python-b163d
+# found package pip-e2f3e
+# found package setuptools-49883
+# found package wheel-59918
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package Python-b163d
+# found package ipython_genutils-1999c
+>>>>>>>>>>>>>>>>>>>>>>>>> Information for user <<<<<<<<<<<<<<<<<<<<<<<<<
+************************************************************************
+************************************************************************
+Requested:  lcgenv ... 
+ Setting up [4mlcgenv HEAD[0m ... 
+  lcgenv -p LCG_93 x86_64-slc6-gcc62-opt cyphon ...
+# No package 'cyphon' found.
+>>>>>>>>>>>>>>>>>>>>>>>>> Information for user <<<<<<<<<<<<<<<<<<<<<<<<<
+************************************************************************
+************************************************************************
+Requested:  lcgenv ... 
+ Setting up [4mlcgenv HEAD[0m ... 
+  lcgenv -p LCG_93 x86_64-slc6-gcc62-opt h5py ...
+# Using gcc with newer binutils
+# Using globaly provided gcc from /cvmfs/sft.cern.ch/lcg/contrib
+# found package cython-025e6
+# found package Python-b163d
+# found package sqlite-9c81e
+# found package numpy-a5ce1
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+# found package hdf5-7b8aa
+# found package zlib-da225
+# found package pkg_config-59220
+# found package setuptools-49883
+# found package six-87990
+# found package setuptools-49883
+# found package Python-b163d
+# found package Python-b163d
+>>>>>>>>>>>>>>>>>>>>>>>>> Information for user <<<<<<<<<<<<<<<<<<<<<<<<<
+************************************************************************

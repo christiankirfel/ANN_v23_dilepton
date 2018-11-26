@@ -25,6 +25,7 @@ lsetup "lcgenv -p LCG_93 x86_64-slc6-gcc62-opt keras"
 lsetup "lcgenv -p LCG_93 x86_64-slc6-gcc62-opt ipython"
 lsetup "lcgenv -p LCG_93 x86_64-slc6-gcc62-opt cyphon"
 lsetup "lcgenv -p LCG_93 x86_64-slc6-gcc62-opt h5py"
+lsetup "lcgenv -p LCG_93 x86_64-slc6-gcc62-opt tensorflow"
 #export PATH=$PATH:~/.local/bin
 
 #echo "Job $JOBNUM"
@@ -36,7 +37,7 @@ cd work/
 cp /cephfs/user/s6chkirf/work/area/run/test_ANNinput.root .
 
 
-python AdverNet_variable_arg.py 2j2b ${1} ${2}
+python simple_NN.py 2j2b ${1} ${2}
 
 
 

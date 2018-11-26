@@ -1,0 +1,15 @@
+000 (148.000.000) 11/22 19:31:12 Job submitted from host: <131.220.160.179:9618?addrs=131.220.160.179-9618+[--1]-9618&noUDP&sock=1955_5f63_3>
+...
+001 (148.000.000) 11/22 19:31:16 Job executing on host: <10.160.8.5:9618?CCBID=131.220.166.39:9618%3faddrs%3d131.220.166.39-9618+[--1]-9618%26noUDP%26sock%3dcollector#513%20131.220.166.40:9618%3faddrs%3d131.220.166.40-9618+[--1]-9618%26noUDP%26sock%3dcollector#612&addrs=10.160.8.5-9618+[--1]-9618&noUDP&sock=11957_15ff_3>
+...
+005 (148.000.000) 11/22 19:38:20 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:16, Sys 0 00:00:38  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:16, Sys 0 00:00:38  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	985  -  Run Bytes Sent By Job
+	14757  -  Run Bytes Received By Job
+	985  -  Total Bytes Sent By Job
+	14757  -  Total Bytes Received By Job
+...

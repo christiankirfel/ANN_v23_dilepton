@@ -1,0 +1,29 @@
+/cvmfs/sft.cern.ch/lcg/releases/LCG_93/scikitlearn/0.18.1/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "simple_NN.py", line 34, in <module>
+    import keras.backend as K
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/ROOT/6.12.06/x86_64-slc6-gcc62-opt/lib/ROOT.py", line 318, in _importhook
+    return _orig_ihook( name, *args, **kwds )
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/keras/2.1.1/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/keras/__init__.py", line 3, in <module>
+    from . import utils
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/ROOT/6.12.06/x86_64-slc6-gcc62-opt/lib/ROOT.py", line 318, in _importhook
+    return _orig_ihook( name, *args, **kwds )
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/keras/2.1.1/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/keras/utils/__init__.py", line 6, in <module>
+    from . import conv_utils
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/ROOT/6.12.06/x86_64-slc6-gcc62-opt/lib/ROOT.py", line 318, in _importhook
+    return _orig_ihook( name, *args, **kwds )
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/keras/2.1.1/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/keras/utils/conv_utils.py", line 3, in <module>
+    from .. import backend as K
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/ROOT/6.12.06/x86_64-slc6-gcc62-opt/lib/ROOT.py", line 318, in _importhook
+    return _orig_ihook( name, *args, **kwds )
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/keras/2.1.1/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/keras/backend/__init__.py", line 83, in <module>
+    from .tensorflow_backend import *
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/ROOT/6.12.06/x86_64-slc6-gcc62-opt/lib/ROOT.py", line 318, in _importhook
+    return _orig_ihook( name, *args, **kwds )
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/keras/2.1.1/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py", line 1, in <module>
+    import tensorflow as tf
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/ROOT/6.12.06/x86_64-slc6-gcc62-opt/lib/ROOT.py", line 318, in _importhook
+    return _orig_ihook( name, *args, **kwds )
+ImportError: No module named tensorflow

@@ -1,0 +1,13 @@
+/cvmfs/sft.cern.ch/lcg/releases/LCG_93/scikitlearn/0.18.1/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+Using Theano backend.
+WARNING (theano.gof.cmodule): WARNING: your Theano flags `gcc.cxxflags` specify an `-march=X` flags.
+         It is better to let Theano/g++ find it automatically, but we don't do it now
+Error in <TFile::Init>: file test_ANNinput.root is truncated at 394264576 bytes: should be 856310595, trying to recover
+TFile::Init:0: RuntimeWarning: no keys recovered, file has been made a Zombie
+Traceback (most recent call last):
+  File "simple_NN.py", line 179, in <module>
+    ratiotWtt = weight_ratio(weight__signal, weight__background)
+  File "simple_NN.py", line 177, in weight_ratio
+    return total_weight__signal / total_weight__background
+ZeroDivisionError: integer division or modulo by zero

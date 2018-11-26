@@ -1,0 +1,20 @@
+000 (144.003.000) 11/19 16:10:37 Job submitted from host: <131.220.160.179:9618?addrs=131.220.160.179-9618+[--1]-9618&noUDP&sock=1926_7b24_3>
+...
+001 (144.003.000) 11/19 17:23:31 Job executing on host: <10.160.8.2:9618?CCBID=131.220.166.39:9618%3faddrs%3d131.220.166.39-9618+[--1]-9618%26noUDP%26sock%3dcollector#530%20131.220.166.40:9618%3faddrs%3d131.220.166.40-9618+[--1]-9618%26noUDP%26sock%3dcollector#629&addrs=10.160.8.2-9618+[--1]-9618&noUDP&sock=11948_e9a5_3>
+...
+013 (144.003.000) 11/20 10:33:12 Job was released.
+	The system macro SYSTEM_PERIODIC_RELEASE expression '( ( time() - EnteredCurrentStatus ) > 10 * 60 ) && ( JobStatus == 5 )' evaluated to TRUE
+...
+001 (144.003.000) 11/20 10:35:21 Job executing on host: <10.160.8.2:9618?CCBID=131.220.166.39:9618%3faddrs%3d131.220.166.39-9618+[--1]-9618%26noUDP%26sock%3dcollector#530%20131.220.166.40:9618%3faddrs%3d131.220.166.40-9618+[--1]-9618%26noUDP%26sock%3dcollector#629&addrs=10.160.8.2-9618+[--1]-9618&noUDP&sock=11948_e9a5_3>
+...
+005 (144.003.000) 11/21 18:41:46 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 1 23:06:04, Sys 0 03:02:55  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 1 23:06:04, Sys 0 03:02:55  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	1970  -  Run Bytes Sent By Job
+	57048964  -  Run Bytes Received By Job
+	1970  -  Total Bytes Sent By Job
+	57048964  -  Total Bytes Received By Job
+...

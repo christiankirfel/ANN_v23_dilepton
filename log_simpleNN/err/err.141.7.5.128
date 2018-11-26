@@ -1,0 +1,16 @@
+/cvmfs/sft.cern.ch/lcg/releases/LCG_93/scikitlearn/0.18.1/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+Using Theano backend.
+WARNING (theano.gof.cmodule): WARNING: your Theano flags `gcc.cxxflags` specify an `-march=X` flags.
+         It is better to let Theano/g++ find it automatically, but we don't do it now
+Error in <TFile::ReadBuffer>: error reading all requested bytes from file test_ANNinput.root, got 699587 of 957329
+Error in <TBranch::GetBasket>: File: test_ANNinput.root at byte:0, branch:cent_lep2jet2, entry:0, badread=1, nerrors=1, basketnumber=0
+Traceback (most recent call last):
+  File "simple_NN.py", line 141, in <module>
+    event__background.append(tree2array(tree__background[-1], branches=variableList, selection='1'))
+  File "/cvmfs/sft.cern.ch/lcg/releases/LCG_93/root_numpy/4.6.0/x86_64-slc6-gcc62-opt/lib/python2.7/site-packages/root_numpy/_tree.py", line 385, in tree2array
+    cache_size)
+  File "root_numpy/src/tree.pyx", line 572, in _librootnumpy.root2array_fromtree (root_numpy/src/_librootnumpy.cpp:572)
+  File "root_numpy/src/tree.pyx", line 480, in _librootnumpy.tree2array (root_numpy/src/_librootnumpy.cpp:480)
+  File "root_numpy/src/tree.pyx", line 143, in _librootnumpy.handle_load (root_numpy/src/_librootnumpy.cpp:143)
+ValueError: chain is empty
